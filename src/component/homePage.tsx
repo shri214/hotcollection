@@ -59,16 +59,20 @@ export const HomePage: React.FC = () => {
   );
   const paginatedResult = paginator.paginate();
 
+  console.log("root of home");
   useEffect(() => {
     dispatch(filter(collections.CollectionData));
-  }, []);
+    console.log('rerender');
+  }, [collections.CollectionData, dispatch]);
 
   if (collections.FilterData.length === 0) {
     return <Spinner />;
   }
+  console.log("home filter data is :", collections.FilterData);
   return (
     <div>
-      <CategoryComp />
+     
+      <CategoryComp  />
       <div className="container">
         {paginatedResult.data.map((val: IData, ind: number) => {
           return (

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../Redux/reducer/combineReducer";
 import "./home.scss";
@@ -28,7 +28,9 @@ export const HomePage: React.FC = () => {
 
   const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
     filterDataIs = collections.FilterData.filter((val) =>
-      val.body.name.includes(e.target.value)
+      val.body.name
+        .toLocaleLowerCase()
+        .includes(e.target.value.toLocaleLowerCase())
     );
     if (e.target.value !== "") {
       if (filterDataIs.length === 0) {
@@ -81,7 +83,9 @@ export const HomePage: React.FC = () => {
   useEffect(() => {
     dispatch(filter(collections.CollectionData));
     console.log("rerendering done");
-  }, [collections.CollectionData, dispatch]);
+  }, []);
+
+  console.log("filter data :", collections.FilterData);
 
   if (collections.FilterData.length === 0) {
     return <Spinner />;

@@ -31,27 +31,7 @@ export interface IData {
     };
   }
 
-export const collectionList=():IData[]=>{
-    // const data=[
-    //     img1,
-    //     img2,
-    //     img3,
-    //     img4,
-    //     img5,
-    //     img6,
-    //     img7,
-    //     img8,
-    //     img9,
-    //     img10,
-    //     img11,
-    //     img12,
-    //     img13,
-    //     img14,
-    //     img15,
-    //     img16,
-    //     img17,
-    //   ];
-      
+export const collectionList=():IData[]=>{   
     const dataBase=[
       {
         image:img1,
@@ -71,7 +51,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
-          name:"kaljal agarawal",
+          name:"kajal agarawal",
           category:"ullu",
           duration:20,
           language:"hindi",
@@ -86,7 +66,7 @@ export const collectionList=():IData[]=>{
         body:{
           name:"kajal agarawal",
           category:"ullu",
-          duration:20,
+          duration:22,
           language:"hindi",
           storyTpe:true,
           fullVideo:false,
@@ -99,7 +79,7 @@ export const collectionList=():IData[]=>{
         body:{
           name:"kajal agarawal",
           category:"kooku",
-          duration:20,
+          duration:10,
           language:"hindi",
           storyTpe:false,
           fullVideo:false,
@@ -125,7 +105,7 @@ export const collectionList=():IData[]=>{
         body:{
           name:"pakistani actress",
           category:"kooku",
-          duration:10,
+          duration:20,
           language:"urdu",
           storyTpe:true,
           fullVideo:false,

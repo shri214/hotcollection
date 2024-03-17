@@ -3,7 +3,7 @@ import { categoryFunc } from "./categoryFunc";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../Redux/reducer/combineReducer";
 import { filter, reset } from "../Redux/action/actionCreation";
-import './category.css'
+import './category.scss'
 
 
 export const CategoryComp: React.FC = () => {

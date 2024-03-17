@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./about.scss";
 import { handleClick } from "../share";
-export const About = () => {
+export const About:React.FC = () => {
   return (
     <div className="about">
       <div className="heading1 h-primary">

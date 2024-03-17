@@ -19,7 +19,7 @@ export const Navbar: React.FC = () => {
       document.removeEventListener("click", func);
     };
   }, []);
-  
+
   return (
     <nav id="navbar">
       <a href="/home">
@@ -33,10 +33,10 @@ export const Navbar: React.FC = () => {
             <a href="/home">Home</a>
           </li>
           <li className="items">
-            <a href="category">Category</a>
+            <a href="/category">Category</a>
           </li>
           <li className="items">
-            <a href="about">About</a>
+            <a href="/about">About</a>
           </li>
           <li className="item" onClick={handleClick}>
             Share

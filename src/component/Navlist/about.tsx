@@ -1,21 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./about.scss";
+import { handleClick } from "../share";
 export const About = () => {
-  const url = "https://hotcollection.vercel.app/";
-  const handleClick = async () => {
-    try {
-      if (navigator.share) {
-        await navigator.share({ url: url });
-        console.log("Shared successfully");
-      } else {
-        throw new Error("Web Share API not supported");
-      }
-    } catch (error: any) {
-      console.error("Error sharing:", error.message);
-      alert(`Share this link: ${url}`);
-    }
-  };
   return (
     <div className="about">
       <div className="heading1 h-primary">
@@ -109,7 +96,7 @@ export const About = () => {
       </div>
       <div className="other">
         <button className="share" onClick={handleClick}>
-          share
+          SHARE
         </button>
       </div>
     </div>

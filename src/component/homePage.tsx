@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { ChangeEvent, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../Redux/reducer/combineReducer";
-import "./home.css";
+import "./home.scss";
 import { Paginator } from "./pagination";
 import {
   decrement,
@@ -22,8 +22,27 @@ interface PaginationOptions {
 export const HomePage: React.FC = () => {
   let collections = useSelector((state: RootState) => state.reducers);
 
+  let filterDataIs = collections.FilterData;
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    filterDataIs = collections.FilterData.filter((val) =>
+      val.body.name.includes(e.target.value)
+    );
+    if (e.target.value !== "") {
+      if (filterDataIs.length === 0) {
+        dispatch(filter(collections.CollectionData));
+        dispatch(reset(1));
+      } else {
+        dispatch(filter(filterDataIs));
+        dispatch(reset(1));
+      }
+    } else if (e.target.value === "") {
+      dispatch(filter(collections.CollectionData));
+      dispatch(reset(1));
+    }
+  };
 
   const handleClickEvent = (val: IData) => {
     let id = val.id;
@@ -59,20 +78,24 @@ export const HomePage: React.FC = () => {
   );
   const paginatedResult = paginator.paginate();
 
-  console.log("root of home");
   useEffect(() => {
     dispatch(filter(collections.CollectionData));
-    console.log('rerender');
+    console.log("rerendering done");
   }, [collections.CollectionData, dispatch]);
 
   if (collections.FilterData.length === 0) {
     return <Spinner />;
   }
-  console.log("home filter data is :", collections.FilterData);
   return (
-    <div>
-     
-      <CategoryComp  />
+    <div className="home">
+      <div className="search">
+        <input
+          type="search"
+          placeholder="Enter Name of Actress"
+          onChange={handleInput}
+        />
+      </div>
+      <CategoryComp />
       <div className="container">
         {paginatedResult.data.map((val: IData, ind: number) => {
           return (

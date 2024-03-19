@@ -22,6 +22,7 @@ export interface IData {
     link: string;
     id: number;
     body: {
+      description:string;
       name: string;
       category?: string;
       duration?:number;
@@ -32,12 +33,13 @@ export interface IData {
   }
 
 export const collectionList=():IData[]=>{   
-    const dataBase=[
+    const dataBase=[    
       {
         image:img1,
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"pakistani actress",
           category:"ullu",
           duration:10,
@@ -51,6 +53,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"kajal agarawal",
           category:"ullu",
           duration:20,
@@ -64,6 +67,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"kajal agarawal",
           category:"ullu",
           duration:22,
@@ -77,6 +81,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"kajal agarawal",
           category:"kooku",
           duration:10,
@@ -90,6 +95,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"sanchita",
           category:"kooku",
           duration:10,
@@ -103,6 +109,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"pakistani actress",
           category:"kooku",
           duration:20,
@@ -116,6 +123,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"pooja",
           category:"netflix",
           duration:60,
@@ -129,6 +137,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"kathrine",
           category:"netflix",
           duration:60,
@@ -142,6 +151,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"keerthy",
           category:"netflix",
           duration:20,
@@ -155,6 +165,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"keerthy",
           category:"amazon",
           duration:20,
@@ -168,6 +179,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"south actress",
           category:"amazon",
           duration:10,
@@ -181,6 +193,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"pooja",
           category:"ullu",
           duration:20,
@@ -194,6 +207,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"pooja",
           category:"kooku",
           duration:10,
@@ -207,6 +221,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"pooja",
           category:"netflix",
           duration:20,
@@ -220,6 +235,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"rashmika",
           category:"amazon",
           duration:60,
@@ -233,6 +249,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"rashmika",
           category:"kooku",
           duration:20,
@@ -246,6 +263,7 @@ export const collectionList=():IData[]=>{
         link:"links",
         id:0,
         body:{
+          description:"",
           name:"rashmika",
           category:"netfilx",
           duration:10,
@@ -256,9 +274,8 @@ export const collectionList=():IData[]=>{
       },
     
     ]
-    const list=dataBase.reverse();
-    for (let i = 0; i < list.length; i++) {
-          list[i].id=i+1
+    for (let i = 0; i < dataBase.length; i++) {
+          dataBase[i].id=i+1
     }
-  return list;
+  return dataBase;
 }

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../Redux/reducer/combineReducer";
 import "./home.scss";
@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { IData } from "../Redux/reducer/collectionList";
 import { CategoryComp } from "./categoryComp";
 import { Spinner } from "./spinner";
+import { NotFound } from "./notFound";
 
 interface PaginationOptions {
   pageSize: number;
@@ -34,8 +35,8 @@ export const HomePage: React.FC = () => {
     );
     if (e.target.value !== "") {
       if (filterDataIs.length === 0) {
-        dispatch(filter(collections.CollectionData));
-        dispatch(reset(1));
+        alert("not found");
+        e.target.value = "";
       } else {
         dispatch(filter(filterDataIs));
         dispatch(reset(1));
@@ -85,8 +86,6 @@ export const HomePage: React.FC = () => {
     console.log("rerendering done");
   }, []);
 
-  console.log("filter data :", collections.FilterData);
-
   if (collections.FilterData.length === 0) {
     return <Spinner />;
   }
@@ -99,6 +98,7 @@ export const HomePage: React.FC = () => {
           onChange={handleInput}
         />
       </div>
+
       <CategoryComp />
       <div className="container">
         {paginatedResult.data.map((val: IData, ind: number) => {

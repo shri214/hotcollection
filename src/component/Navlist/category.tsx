@@ -3,7 +3,6 @@ import "./categories.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../Redux/reducer/combineReducer";
 import { filter, reset } from "../../Redux/action/actionCreation";
-import { useNavigate } from "react-router-dom";
 interface IFilter {
   category: string;
   name: string;
@@ -24,7 +23,6 @@ export const Category: React.FC = () => {
   });
   const collection = useSelector((state: RootState) => state.reducers);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const setButton = (
     filter: string | boolean | number,
@@ -74,7 +72,6 @@ export const Category: React.FC = () => {
     dispatch(filter(data));
     dispatch(reset(1));
     console.log(collection.FilterData);
-    navigate("/home");
   };
   return (
     <div className="category-component">

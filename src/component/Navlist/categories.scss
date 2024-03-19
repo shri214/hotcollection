@@ -1,8 +1,13 @@
 .category-component {
+  position: absolute;
+  top: 70px;
+  left: 50%;
   width: 1200px;
   display: block;
-  margin: auto;
+  transform: translate(-50%, 0);
+  background: #a6a1a170;
   margin-top: 10px;
+  overflow-x: scroll;
   .filter-component {
     padding: 10px;
     box-shadow: inset 0px 0px 20px 5px rgba(165, 215, 224, 0.733);
@@ -44,25 +49,49 @@
         }
       }
     }
-    .search-btn{
+    .search-btn {
       margin: 10px 0px;
       display: flex;
       flex-flow: row;
       justify-content: center;
       align-items: center;
-      width:100%;
-      .search{
+      width: 100%;
+      .search {
         width: 20%;
       }
     }
   }
 }
+::-webkit-scrollbar {
+  width: 5px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+  background: #b7e9f4;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #9dfcd5;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #40fab9;
+}
 @media screen and (max-width: 1220px) {
   .category-component {
     width: 100%;
+    height: 90vh;
     .filter-component {
       margin: 10px;
+      .filterBy {
+        .buttons {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+          gap: 10px;
+        }
+      }
     }
   }
 }

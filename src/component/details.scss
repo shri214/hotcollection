@@ -1,0 +1,117 @@
+.containers {
+  width: 1200px;
+  display: flex;
+  margin: auto;
+  background-color: rgb(24, 24, 24);
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  .dashboards {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    .detail-container {
+      width: 500px;
+      height: auto;
+      img {
+        height: inherit;
+        width: inherit;
+        object-fit: cover;
+      }
+      .para {
+        text-align: center;
+        text-transform: capitalize;
+        font-size: clamp(50px, 4vw, 100px);
+        font-weight: 700;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: -103px;
+        background-position-x: -33px;
+      }
+    }
+  }
+  .download {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: auto;
+    box-shadow: inset 0px 0px 10px 6px rgba(222, 219, 219, 0.717);
+    padding: 20px;
+    .heading-download {
+      font-family: gustera;
+      line-height: 50px;
+      font-size: clamp(55px, 5vw, 100px);
+    }
+    .language {
+      margin-top: 60px;
+      width: 100%;
+
+      .lang {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        gap: 5%;
+        .btn {
+          flex-basis: 45%;
+          background: white;
+          color: rgb(12, 12, 12);
+        }
+
+        .active {
+          background: red;
+          color: white;
+        }
+      }
+
+      .description {
+        margin: 20px 0px;
+        font-family: aRegular;
+      }
+      .joins{
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: black;
+        margin-bottom: 10px;
+      }
+      .join{
+        width: 50%;
+        font-size: clamp(15px, 4vw, 30px);
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .containers {
+    width: 100%;
+    .dashboards {
+      padding: 5%;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .containers {
+    .dashboards {
+      padding: 0;
+      width: 100%;
+      .detail-container {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .download{
+        width: 90%;
+        padding: 5px;
+    }
+  }
+}

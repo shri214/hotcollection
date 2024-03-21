@@ -14,6 +14,13 @@ export const DetailItem: React.FC = () => {
 
   return (
     <div className="containers">
+      <div className="announce">
+        <h1>
+          All content I upload is available on the internet. I don't intend
+          harm. If you have concerns, contact me, and I'll promptly remove the
+          content in question.
+        </h1>
+      </div>
       <div className="dashboards">
         {data
           .filter((val) => val.id === parseInt(id!))
@@ -89,8 +96,11 @@ export const DetailItem: React.FC = () => {
       </div>
       <div className="videos">
         <div className="videoDesc">
-          <p>{dis}</p>
+          <h2>Plot : </h2>
+          <p className="descriptions">{dis}</p>
+          <p className="tip">For Download this video please click the Download buttons</p>
         </div>
+        <button onClick={()=>window.open(link)} className="download-button">Download</button>
       </div>
     </div>
   );

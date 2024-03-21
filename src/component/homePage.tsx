@@ -13,7 +13,6 @@ import { useNavigate } from "react-router-dom";
 import { IData } from "../Redux/reducer/collectionList";
 import { CategoryComp } from "./categoryComp";
 import { Spinner } from "./spinner";
-import { NotFound } from "./notFound";
 
 interface PaginationOptions {
   pageSize: number;
@@ -23,6 +22,9 @@ interface PaginationOptions {
 export const HomePage: React.FC = () => {
   let collections = useSelector((state: RootState) => state.reducers);
 
+  collections.CollectionData.forEach((val, ind)=>{
+    console.log(ind, ":" , val.body.name);
+  })
   let filterDataIs = collections.FilterData;
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -51,8 +53,9 @@ export const HomePage: React.FC = () => {
     let id = val.id;
     navigate(`/details/${id}`);
   };
+  
 
-  const maxPageNumber = Math.ceil(collections.FilterData.length / 6);
+  const maxPageNumber = Math.ceil(collections.FilterData.length / 10);
   const handleNextEvents = (e: React.MouseEvent) => {
     if (collections.PageNum < maxPageNumber) {
       dispatch(increment(1));
@@ -71,7 +74,7 @@ export const HomePage: React.FC = () => {
   };
 
   const paginationOptions: PaginationOptions = {
-    pageSize: 6,
+    pageSize: 10,
     currentPage: collections.PageNum,
   };
 
@@ -84,7 +87,7 @@ export const HomePage: React.FC = () => {
   useEffect(() => {
     dispatch(filter(collections.CollectionData));
     console.log("rerendering done");
-  }, []);
+  }, [collections.CollectionData, dispatch]);
 
   if (collections.FilterData.length === 0) {
     return <Spinner />;
@@ -100,6 +103,13 @@ export const HomePage: React.FC = () => {
       </div>
 
       <CategoryComp />
+      <div className="announce">
+        <h1>
+          All content I upload is available on the internet. I don't intend
+          harm. If you have concerns, contact me, and I'll promptly remove the
+          content in question.
+        </h1>
+      </div>
       <div className="container">
         {paginatedResult.data.map((val: IData, ind: number) => {
           return (
@@ -110,6 +120,7 @@ export const HomePage: React.FC = () => {
                 alt={val.image}
                 onClick={() => handleClickEvent(val)}
               />
+              <p className="details">{val.body.name}</p>
             </div>
           );
         })}

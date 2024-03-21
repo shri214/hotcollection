@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./nav.scss";
 import "./Navlist/categories.scss";
-import image1 from "../img/1196306.jpg";
+import image1 from "../images/31.jpg";
 import { handleClick } from "./share";
 import { filter, reset } from "../Redux/action/actionCreation";
 import { useDispatch, useSelector } from "react-redux";
@@ -130,35 +130,85 @@ export const Navbar: React.FC = () => {
               <div className="buttons">
                 <button
                   className={`filter-btns ${
-                    activeButton.category === "ULLU" ? "active" : ""
+                    activeButton.category === "desi" ? "active" : ""
                   }`}
-                  onClick={(e) => handleButtonClick("ULLU", "category", e)}
+                  onClick={(e) => handleButtonClick("desi", "category", e)}
                 >
-                  ULLU
+                  Desi
                 </button>
                 <button
                   className={`filter-btns ${
-                    activeButton.category === "KOOKU" ? "active" : ""
+                    activeButton.category === "hindi drama" ? "active" : ""
                   }`}
-                  onClick={(e) => handleButtonClick("KOOKU", "category", e)}
+                  onClick={(e) =>
+                    handleButtonClick("hindi drama", "category", e)
+                  }
                 >
-                  KOOKU
+                  Hindi Drama
                 </button>
                 <button
                   className={`filter-btns ${
-                    activeButton.category === "NETFLIX" ? "active" : ""
+                    activeButton.category === "family" ? "active" : ""
                   }`}
-                  onClick={(e) => handleButtonClick("NETFLIX", "category", e)}
+                  onClick={(e) => handleButtonClick("family", "category", e)}
                 >
-                  NETFLIX
+                  Family
                 </button>
                 <button
                   className={`filter-btns ${
-                    activeButton.category === "AMAZON" ? "active" : ""
+                    activeButton.category === "doctor" ? "active" : ""
                   }`}
-                  onClick={(e) => handleButtonClick("AMAZON", "category", e)}
+                  onClick={(e) => handleButtonClick("doctor", "category", e)}
                 >
-                  AMAZON
+                  Doctor
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.category === "yoga" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("yoga", "category", e)}
+                >
+                  Yoga
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.category === "office" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("office", "category", e)}
+                >
+                  Office
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.category === "pakistani" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("pakistani", "category", e)}
+                >
+                  Pakistani
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.category === "threesome" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("threesome", "category", e)}
+                >
+                  Threesome
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.category === "seduction" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("seduction", "category", e)}
+                >
+                  Seduction
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.category === "gang bang" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("gang bang", "category", e)}
+                >
+                  Gang Bang
                 </button>
               </div>
             </div>
@@ -167,71 +217,133 @@ export const Navbar: React.FC = () => {
               <div className="buttons">
                 <button
                   className={`filter-btns ${
-                    activeButton.name === "pakistani actress" ? "active" : ""
+                    activeButton.name === "Blake Blossom actress"
+                      ? "active"
+                      : ""
                   }`}
-                  onClick={(e) =>
-                    handleButtonClick("pakistani actress", "name", e)
-                  }
+                  onClick={(e) => handleButtonClick("Blake Blossom", "name", e)}
                 >
-                  pakistani actress
+                  Blake Blossom
                 </button>
                 <button
                   className={`filter-btns ${
-                    activeButton.name === "kajal agarawal" ? "active" : ""
+                    activeButton.name === "Sofie Reyez" ? "active" : ""
                   }`}
-                  onClick={(e) =>
-                    handleButtonClick("kajal agarawal", "name", e)
-                  }
+                  onClick={(e) => handleButtonClick("Sofie Reyez", "name", e)}
                 >
-                  kajal agarawal
+                  Sofie Reyez
                 </button>
                 <button
                   className={`filter-btns ${
-                    activeButton.name === "sanchita" ? "active" : ""
+                    activeButton.name === "Delilah Stone" ? "active" : ""
                   }`}
-                  onClick={(e) => handleButtonClick("sanchita", "name", e)}
+                  onClick={(e) => handleButtonClick("Delilah Stone", "name", e)}
                 >
-                  sanchita
+                  Delilah Stone
                 </button>
                 <button
                   className={`filter-btns ${
-                    activeButton.name === "pooja" ? "active" : ""
+                    activeButton.name === "Viral Video" ? "active" : ""
                   }`}
-                  onClick={(e) => handleButtonClick("pooja", "name", e)}
+                  onClick={(e) => handleButtonClick("Viral Video", "name", e)}
                 >
-                  pooja
+                  Viral Video
                 </button>
                 <button
                   className={`filter-btns ${
-                    activeButton.name === "kathrine" ? "active" : ""
+                    activeButton.name === "Desi Bhabhi" ? "active" : ""
                   }`}
-                  onClick={(e) => handleButtonClick("kathrine", "name", e)}
+                  onClick={(e) => handleButtonClick("Desi Bhabhi", "name", e)}
                 >
-                  kathrine
+                  Desi Bhabhi
                 </button>
                 <button
                   className={`filter-btns ${
-                    activeButton.name === "keerthy" ? "active" : ""
+                    activeButton.name === "Desi Mms" ? "active" : ""
                   }`}
-                  onClick={(e) => handleButtonClick("keerthy", "name", e)}
+                  onClick={(e) => handleButtonClick("Desi Mms", "name", e)}
                 >
-                  keerthy
+                  Desi Mms
                 </button>
                 <button
                   className={`filter-btns ${
-                    activeButton.name === "south actress" ? "active" : ""
+                    activeButton.name === "Maxie Mellow" ? "active" : ""
                   }`}
-                  onClick={(e) => handleButtonClick("south actress", "name", e)}
+                  onClick={(e) => handleButtonClick("Maxie Mellow", "name", e)}
                 >
-                  south actress
+                  Maxie Mellow
                 </button>
                 <button
                   className={`filter-btns ${
-                    activeButton.name === "rashmika" ? "active" : ""
+                    activeButton.name === "Saanvi Bahl" ? "active" : ""
                   }`}
-                  onClick={(e) => handleButtonClick("rashmika", "name", e)}
+                  onClick={(e) => handleButtonClick("Saanvi Bahl", "name", e)}
                 >
-                  rashmika
+                  Saanvi Bahl
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.name === "Gia Venetia" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("Gia Venetia", "name", e)}
+                >
+                  Gia Venetia
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.name === "Sophia" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("Sophia", "name", e)}
+                >
+                  Sophia
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.name === "Paisley Porter" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("Paisley Porter", "name", e)}
+                >
+                  Paisley Porter
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.name === "Jennifer Mendez" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("Jennifer Mendez", "name", e)}
+                >
+                  Jennifer Mendez
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.name === "Penny Barbar" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("Penny Barbar", "name", e)}
+                >
+                  Penny Barbar
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.name === "Swapping" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("Swapping", "name", e)}
+                >
+                  Swapping
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.name === "Haley Spades" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("Haley Spades", "name", e)}
+                >
+                  Haley Spades
+                </button>
+                <button
+                  className={`filter-btns ${
+                    activeButton.name === "Other" ? "active" : ""
+                  }`}
+                  onClick={(e) => handleButtonClick("Other", "name", e)}
+                >
+                  Other
                 </button>
               </div>
             </div>
@@ -253,14 +365,6 @@ export const Navbar: React.FC = () => {
                   onClick={(e) => handleButtonClick("english", "language", e)}
                 >
                   english
-                </button>
-                <button
-                  className={`filter-btns ${
-                    activeButton.language === "urdu" ? "active" : ""
-                  }`}
-                  onClick={(e) => handleButtonClick("urdu", "language", e)}
-                >
-                  urdu
                 </button>
               </div>
             </div>

@@ -16,10 +16,11 @@ export const CategoryComp: React.FC = () => {
     }
   return (
     <div className="filterContainer">
-      <button className="btn" onClick={()=>handleFilter("ullu")}>WebSeries</button>
-      <button className="btn" onClick={()=>handleFilter("kooku")}>PornStar</button>
-      <button className="btn"  onClick={()=>handleFilter("netflix")}>Desi</button>
-      <button className="btn" onClick={()=>handleFilter("amazon")}>MMS</button>
+      <button className="btn" onClick={()=>handleFilter("")}>All</button>
+      <button className="btn" onClick={()=>handleFilter("webSeries")}>WebSeries</button>
+      <button className="btn" onClick={()=>handleFilter("Hindi Drama")}>Hindi Drama</button>
+      <button className="btn"  onClick={()=>handleFilter("Desi")}>Desi</button>
+      <button className="btn" onClick={()=>handleFilter("Family")}>Family</button>
     </div>
   );
 };

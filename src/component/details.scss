@@ -12,19 +12,22 @@
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    width: 70%;
     .detail-container {
-      width: 500px;
-      height: auto;
+      width: 100%;
+      height: fit-content;
       img {
-        height: inherit;
-        width: inherit;
+        height: 600px;
+        width: 100%;
         object-fit: cover;
+        object-position: top;
       }
       .para {
         text-align: center;
         text-transform: capitalize;
         font-size: clamp(50px, 4vw, 100px);
         font-weight: 700;
+        margin-bottom: 10px;
         background-repeat: no-repeat;
         background-size: cover;
         background-position-y: -103px;
@@ -32,7 +35,8 @@
       }
     }
   }
-  .download {
+  .download,
+  .videos {
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -41,7 +45,10 @@
     height: auto;
     box-shadow: inset 0px 0px 10px 6px rgba(222, 219, 219, 0.717);
     padding: 20px;
+    margin-bottom: 30px;
+
     .heading-download {
+      margin-top: 20px;
       font-family: gustera;
       line-height: 50px;
       font-size: clamp(55px, 5vw, 100px);
@@ -72,7 +79,7 @@
         margin: 20px 0px;
         font-family: aRegular;
       }
-      .joins{
+      .joins {
         width: 100%;
         display: flex;
         flex-flow: column;
@@ -82,11 +89,36 @@
         color: black;
         margin-bottom: 10px;
       }
-      .join{
+      .join {
         width: 50%;
         font-size: clamp(15px, 4vw, 30px);
         margin-bottom: 10px;
       }
+    }
+  }
+  .videos {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    .videoDesc {
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      h2 {
+        text-align: start;
+      }
+      .descriptions, .tip {
+        font-size: clamp(15px, 4vw, 30px);
+        text-transform: capitalize;
+        margin-bottom: 20px;
+      }
+      
+    }
+    .download-button{
+      width: 50%;
+      margin-bottom: 30px;
     }
   }
 }
@@ -109,9 +141,10 @@
         height: auto;
       }
     }
-    .download{
-        width: 90%;
-        padding: 5px;
+    .download,
+    .videos {
+      width: 90%;
+      padding: 5px;
     }
   }
 }
